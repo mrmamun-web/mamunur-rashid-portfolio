@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   tagline:
     "I build SaaS platforms, CRM systems, and marketplace applications using Laravel, Next.js, and PostgreSQL.",
   location: "Dhaka, Bangladesh",
-  email: "mamun441998@gmail.com",
+  email: "mrmamun.web@gmail.com",
   phone: "+880 1978529953",
   dateOfBirth: "04 April 1998",
   nationality: "Bangladeshi",
@@ -16,7 +16,7 @@ export const SOCIAL_LINKS = {
   github: "https://github.com/mamun441998",
   linkedin: "https://www.linkedin.com/in/mamun441998/",
   facebook: "https://www.facebook.com/mamunsoftwareengineer/",
-  email: "mailto:mamun441998@gmail.com",
+  email: "mailto:mrmamun.web@gmail.com",
 };
 
 export const NAV_LINKS = [

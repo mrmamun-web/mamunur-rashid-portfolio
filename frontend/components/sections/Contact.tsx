@@ -18,6 +18,7 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
   const [status, setStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
   const { data: settings } = useSettings();
+
   // Google Calendar appointment link (auto-adds a Google Meet per booking).
   // Editable from admin → Portfolio CMS "Meeting / Booking URL"; falls back to
   // this default so the button always works even before the CMS value is set.
@@ -26,7 +27,7 @@ export default function Contact() {
   const meetingUrl = settings?.calendly_url?.trim() || DEFAULT_MEETING_URL;
 
   // Contact details are admin-controlled (Portfolio CMS / Settings), with fallbacks.
-  const contactEmail = settings?.email?.trim() || 'mamun441998@gmail.com';
+  const contactEmail = settings?.email?.trim() || 'mrmamun.web@gmail.com';
   const contactPhone = settings?.phone?.trim() || '+880 1978529953';
   const whatsappNumber = contactPhone.replace(/[^0-9]/g, '');
 
@@ -57,6 +58,7 @@ export default function Contact() {
         type: 'success',
         message: 'Message dispatched successfully! I will respond within 24 hours.',
       });
+
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
       console.error("Contact Form Error:", err);
@@ -78,7 +80,7 @@ export default function Contact() {
       <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-cyan-500/5 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
+
         {/* Left Side: Tech Contact HUD */}
         <div className="lg:col-span-6 space-y-8">
           <motion.div
@@ -326,7 +328,6 @@ export default function Contact() {
             </button>
           </form>
         </motion.div>
-
       </div>
     </section>
   );

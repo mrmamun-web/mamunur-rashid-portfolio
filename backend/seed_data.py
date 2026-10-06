@@ -59,6 +59,7 @@ skills_data = [
     {"name": "Linux", "category": "Tools", "proficiency": 75},
 ]
 
+
 experience_data = [
     {
         "role": "Senior Software Engineer / Tech Lead",
@@ -87,6 +88,7 @@ experience_data = [
         "is_current": False,
     },
 ]
+
 
 projects_data = [
     {
@@ -136,6 +138,7 @@ projects_data = [
         "github_url": "https://github.com/freedomwithdxn2026/Saleh-Basahel.git",
     },
 ]
+
 
 services_data = [
     {
@@ -223,6 +226,7 @@ services_data = [
         "order": 6,
     },
 ]
+
 
 case_studies_data = [
     {
@@ -419,7 +423,7 @@ def seed():
                     "building SaaS platforms, CRM systems, marketplace applications, and "
                     "business automation software using Laravel, Next.js, and PostgreSQL."
                 ),
-                email="mamun441998@gmail.com",
+                email="mrmamun.web@gmail.com",
                 phone="+880 1978529953",
                 location="Dhaka, Bangladesh",
                 github_url="https://github.com/mamun441998",

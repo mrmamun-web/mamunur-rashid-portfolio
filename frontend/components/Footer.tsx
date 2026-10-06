@@ -129,7 +129,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="mailto:mamun441998@gmail.com"
+                    href="mailto:mrmamun.web@gmail.com"
                     className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-200"
                   >
                     <Mail size={16} className="stroke-[2.5]" /> Email
