@@ -5,9 +5,9 @@ export const SITE_CONFIG = {
     "I build SaaS platforms, CRM systems, and marketplace applications using Laravel, Next.js, and PostgreSQL.",
   location: "Dhaka, Bangladesh",
   email: "mrmamun.web@gmail.com",
-  phone: "+880 1978529953",
+  phone: "+880 14002267835",
   dateOfBirth: "04 April 1998",
-  nationality: "Bangladeshi",
+  nationality: "Bangladesh",
   // 🎥 Future Video Link Placeholder
   videoIntroUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
 };
