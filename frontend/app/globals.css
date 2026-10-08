@@ -192,27 +192,72 @@ main > section + section {
   cursor: pointer;
 }
 
-/* 💬 Testimonials — dual-row infinite marquee (smooth, GPU-accelerated) */
+/* 💬 Testimonials — dual-row infinite marquee
+   Smooth, GPU-accelerated, pointer-controlled pause/resume. */
+
 @keyframes mrp-marquee-left {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-50%, 0, 0); }
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
+
 @keyframes mrp-marquee-right {
-  from { transform: translate3d(-50%, 0, 0); }
-  to { transform: translate3d(0, 0, 0); }
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
-.mrp-marquee { position: relative; overflow: hidden; }
+
+.mrp-marquee {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
 .mrp-marquee-track {
   display: flex;
   width: max-content;
   will-change: transform;
+  animation-duration: var(--dur, 46s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
 }
-.mrp-marquee-track.to-left { animation: mrp-marquee-left var(--dur, 46s) linear infinite; }
-.mrp-marquee-track.to-right { animation: mrp-marquee-right var(--dur, 60s) linear infinite; }
-/* Pause both rows when hovering anywhere in the marquee band */
-.mrp-marquee:hover .mrp-marquee-track { animation-play-state: paused; }
+
+.mrp-marquee-track.to-left {
+  animation-name: mrp-marquee-left;
+}
+
+.mrp-marquee-track.to-right {
+  animation-name: mrp-marquee-right;
+}
+
+/*
+ * Pause is controlled explicitly by React.
+ *
+ * Do NOT use :hover here.
+ * Mobile browsers can retain hover state after touch interaction,
+ * which can leave a CSS marquee permanently paused.
+ */
+.mrp-marquee-track.is-paused {
+  animation-play-state: paused;
+}
+
+/*
+ * Respect the user's accessibility preference.
+ * React interaction cannot override this.
+ */
 @media (prefers-reduced-motion: reduce) {
-  .mrp-marquee-track { animation: none !important; }
+  .mrp-marquee-track {
+    animation: none !important;
+  }
 }
 
 /* 📝 Admin-authored blog HTML — readable typography on the dark blog theme */
